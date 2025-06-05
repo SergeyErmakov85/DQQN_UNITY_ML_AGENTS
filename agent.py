@@ -107,7 +107,7 @@ class Agent():
         # Q values for best actions in next_state
         # from current Q network
         
-        if self.network == "double" or "duel":
+        if self.network in ["double", "duel"]:
             Q_L = self.qnetwork_local(next_states).detach()
             _, actions_prime = Q_L.max(1)
 
